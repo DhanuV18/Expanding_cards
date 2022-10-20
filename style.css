@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Muli', Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 1.5;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 80vw;
+}
+
+.panel{
+    margin: 5px;
+    height: 90vh;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    flex: 0.5;
+    cursor: pointer;
+    transition: flex 0.75s;
+}
+
+.panel h3{
+    font-size: 2.4rem;
+    color: #fff;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    opacity: 0;
+    margin: 1rem;
+}
+
+.panel.active{
+    flex: 5;
+    
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media screen and (max-width: 780px) {
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+
+}
